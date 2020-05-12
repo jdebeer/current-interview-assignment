@@ -11,13 +11,17 @@ controller.fetch = async (req, res) => {
       visits = await models.visits.findAll({ where: { id: visitId } });
     }
     else if (typeof userId !== 'undefined' && typeof searchString !== 'undefined') {
+      if (typeof searchString !== 'string') {
+        res.status(422);
+        return res.send(`'searchString' must be a string`);
+      }
       const lastFiveVisits = await models.visits.findAll({
         where: { userId },
         order: [['createdAt', 'DESC']],
         limit: 5
       });
       visits = lastFiveVisits.filter(visit => {
-        return stringSimilarity.compareTwoStrings(visit.name, searchString) > 0.5;
+        return stringSimilarity.compareTwoStrings(visit.name.toLowerCase(), searchString.toLowerCase()) > 0.5;
       });
     }
     else {
