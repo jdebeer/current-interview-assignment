@@ -1,3 +1,4 @@
+const stringSimilarity = require('string-similarity');
 const models = require('../models');
 const controller = {};
 
@@ -15,7 +16,9 @@ controller.fetch = async (req, res) => {
         order: [['createdAt', 'DESC']],
         limit: 5
       });
-      visits = lastFiveVisits;
+      visits = lastFiveVisits.filter(visit => {
+        return stringSimilarity.compareTwoStrings(visit.name, searchString) > 0.5;
+      });
     }
     else {
       res.status(422);
