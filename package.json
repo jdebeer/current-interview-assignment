@@ -1,0 +1,19 @@
+{
+  "name": "current-interview-assignment",
+  "version": "1.0.0",
+  "description": "A small API with two endpoints for tracking user visit locations.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jdebeer/current-interview-assignment.git"
+  },
+  "author": "André-Jacques de Beer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jdebeer/current-interview-assignment/issues"
+  },
+  "homepage": "https://github.com/jdebeer/current-interview-assignment#readme"
+}
