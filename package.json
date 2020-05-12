@@ -4,7 +4,9 @@
   "description": "A small API with two endpoints for tracking user visit locations.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index",
+    "start-dev": "nodemon index"
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,16 @@
   "bugs": {
     "url": "https://github.com/jdebeer/current-interview-assignment/issues"
   },
-  "homepage": "https://github.com/jdebeer/current-interview-assignment#readme"
+  "homepage": "https://github.com/jdebeer/current-interview-assignment#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "pg": "^8.1.0",
+    "sequelize": "^5.21.8"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
 }
